@@ -1,0 +1,5 @@
+{
+    "id": "data",
+    "name": "Library Back-End",
+    "type": "wedeploy/data:latest"
+}
