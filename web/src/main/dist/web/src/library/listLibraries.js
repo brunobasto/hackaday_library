@@ -9,6 +9,13 @@ class ListLibraries extends Component {
 	addLibrary() {
 		location.href = '/library';
 	}
+	
+	logout() {
+		WeDeploy.auth('http://auth.hackadaylibrary.wedeploy.me').signOut().then(function() {
+        	location.href = "http://web.hackadaylibrary.wedeploy.me";
+    	});
+	}
+
 
 }
 

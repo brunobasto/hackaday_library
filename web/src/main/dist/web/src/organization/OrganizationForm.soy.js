@@ -100,10 +100,10 @@ if (goog.DEBUG) {
  * @suppress {checkTypes}
  */
 function $layout(opt_data, opt_ignored, opt_ijData) {
-  var param45 = function() {
+  var param53 = function() {
     $render(opt_data, null, opt_ijData);
   };
-  $templateAlias1(soy.$$augmentMap(opt_data, {content: param45}), null, opt_ijData);
+  $templateAlias1(soy.$$augmentMap(opt_data, {content: param53}), null, opt_ijData);
 }
 exports.layout = $layout;
 if (goog.DEBUG) {

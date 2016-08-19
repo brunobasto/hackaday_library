@@ -18112,6 +18112,11 @@ babelHelpers;
     function $render(opt_data, opt_ignored, opt_ijData) {
       itext('  ');
       ie_open('div', null, null, 'class', 'container');
+      ie_open('div', null, null, 'class', 'row text-right');
+      ie_open('button', null, null, 'type', 'button', 'data-onclick', 'logout', 'class', 'btn btn-danger');
+      itext('Logout');
+      ie_close('button');
+      ie_close('div');
       ie_open('div', null, null, 'class', 'row');
       ie_open('div', null, null, 'class', 'list col-md-8 col-md-offset-4');
       ie_open('ul', null, null, 'class', 'list-group');
@@ -18212,6 +18217,12 @@ babelHelpers;
 
 		ListLibraries.prototype.addLibrary = function addLibrary() {
 			location.href = '/library';
+		};
+
+		ListLibraries.prototype.logout = function logout() {
+			WeDeploy.auth('http://auth.hackadaylibrary.wedeploy.me').signOut().then(function () {
+				location.href = "http://web.hackadaylibrary.wedeploy.me";
+			});
 		};
 
 		return ListLibraries;
@@ -18326,10 +18337,10 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $layout(opt_data, opt_ignored, opt_ijData) {
-      var param53 = function param53() {
+      var param43 = function param43() {
         $render(opt_data, null, opt_ijData);
       };
-      $templateAlias1(soy.$$augmentMap(opt_data, { content: param53 }), null, opt_ijData);
+      $templateAlias1(soy.$$augmentMap(opt_data, { content: param43 }), null, opt_ijData);
     }
     exports.layout = $layout;
     if (goog.DEBUG) {
@@ -18394,25 +18405,28 @@ babelHelpers;
 
 	this.Library.LoginForm = LoginForm;
 }).call(this);
-'use strict';
+//var form = document.querySelector('form');
+//
+//form.addEventListener('submit', function(e) {
+//	e.preventDefault();
+//
+//	WeDeploy
+//		.url('http://data.hackadaylibrary.wedeploy.me/organization')
+//		.post({
+//			name: form.item.value
+//		})
+//		.then(function(response) {
+//			form.reset();
+//			form.item.focus();
+//			console.info('Saved:', response.body());
+//		})
+//		.catch(function(error) {
+//			console.error(error);
+//		});
+//}); 
+"use strict";
 
-(function () {
-	var form = document.querySelector('form');
-
-	form.addEventListener('submit', function (e) {
-		e.preventDefault();
-
-		WeDeploy.url('http://data.hackadaylibrary.wedeploy.me/organization').post({
-			name: form.item.value
-		}).then(function (response) {
-			form.reset();
-			form.item.focus();
-			console.info('Saved:', response.body());
-		}).catch(function (error) {
-			console.error(error);
-		});
-	});
-}).call(this);
+(function () {}).call(this);
 'use strict';
 
 (function () {
@@ -18501,10 +18515,10 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $layout(opt_data, opt_ignored, opt_ijData) {
-      var param45 = function param45() {
+      var param53 = function param53() {
         $render(opt_data, null, opt_ijData);
       };
-      $templateAlias1(soy.$$augmentMap(opt_data, { content: param45 }), null, opt_ijData);
+      $templateAlias1(soy.$$augmentMap(opt_data, { content: param53 }), null, opt_ijData);
     }
     exports.layout = $layout;
     if (goog.DEBUG) {

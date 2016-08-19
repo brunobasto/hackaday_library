@@ -46,6 +46,15 @@ function $render(opt_data, opt_ignored, opt_ijData) {
   ie_open('div', null, null,
       'class', 'container');
     ie_open('div', null, null,
+        'class', 'row text-right');
+      ie_open('button', null, null,
+          'type', 'button',
+          'data-onclick', 'logout',
+          'class', 'btn btn-danger');
+        itext('Logout');
+      ie_close('button');
+    ie_close('div');
+    ie_open('div', null, null,
         'class', 'row');
       ie_open('div', null, null,
           'class', 'list col-md-8 col-md-offset-4');
