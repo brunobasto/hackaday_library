@@ -1,0 +1,26 @@
+{namespace LoginForm}
+
+/**
+ * Login
+ */
+{template .render}
+	{@param? textFooter: html}
+	{@param? textPrimary: html}
+
+	{if $textPrimary}
+		<h1 class="login-text-primary">{$textPrimary}</h1>
+	{/if}
+	<div class="loginform">
+		<div class="form-group social">
+			<button class="btn btn-social btn-google" type="button" data-onclick="loginWithGoogle">
+				<span class="brand">
+					<span class="icon icon-google"></span>
+				</span>
+				<span class="btn-label">Login with Google</span>
+			</button>
+		</div>
+	</div>
+	{if $textFooter}
+		<p class="login-text-footer">{$textFooter}</p>
+	{/if}
+{/template}

@@ -1,0 +1,117 @@
+{namespace InputMatrix}
+
+/**
+ * This renders the component's whole content.
+ * @param? fields
+ * @param fieldsConfig
+ */
+{template .render}
+	<div class="input-matrix">
+		<div class="input-matrix-labels">
+			{foreach $config in $fieldsConfig}
+				<label class="input-matrix-label">{$config.label ?: ''}</label>
+			{/foreach}
+		</div>
+
+		{let $fieldObjs: $fields ? $fields : [[]] /}
+
+		{let $shouldAddRow kind="text"}
+			{call .shouldAddRow}
+				{param fields: $fieldObjs[length($fieldObjs) - 1] ?: [] /}
+				{param fieldsConfig: $fieldsConfig /}
+			{/call}
+		{/let}
+
+		{foreach $rowFields in $fieldObjs}
+			{call .row}
+				{param fieldsConfig : $fieldsConfig /}
+				{param last: (not $shouldAddRow) and index($rowFields) == (length($fieldObjs) - 1) /}
+				{param rowFields: $rowFields /}
+				{param rowIndex: index($rowFields) /}
+			{/call}
+		{/foreach}
+
+		{if $shouldAddRow != ''}
+			{call .row}
+				{param fieldsConfig : $fieldsConfig /}
+				{param last: true /}
+				{param rowFields: [] /}
+				{param rowIndex: length($fieldObjs) /}
+			{/call}
+		{/if}
+	</div>
+{/template}
+
+/**
+ * @param fieldsConfig
+ * @param last
+ * @param? rowFields
+ * @param rowIndex
+ */
+{template .row}
+	<div class="input-matrix-fields">
+		<div class="input-matrix-fields-left">
+			{foreach $config in $fieldsConfig}
+				{let $index: index($config) /}
+				{call .field data="$config"}
+					{param field: $rowFields ? $rowFields[$index] : null /}
+					{param fieldIndex: $index /}
+					{param rowIndex: $rowIndex /}
+				{/call}
+			{/foreach}
+		</div>
+		<div class="input-matrix-fields-right">
+			{if not $last}
+				<button
+					type="button"
+					class="close"
+					data-onclick="handleRemoveClick_"
+					data-row-index="{$rowIndex}"
+					aria-label="Remove"
+					tabindex="-1">
+					<span aria-hidden="true">×</span>
+				</button>
+			{/if}
+		</div>
+	</div>
+{/template}
+
+/**
+ * @param? field
+ * @param fieldIndex
+ * @param? name
+ * @param? placeholder
+ * @param rowIndex
+ */
+{template .field}
+	{let $hasError: $field and $field.error and $field.error != '' /}
+	<div class="form-group {$hasError ? 'has-error' : ''}">
+		<input
+			type="text"
+			value="{$field and $field.value ? $field.value : ''}"
+			class="form-control input-matrix-field"
+			data-field-index="{$fieldIndex}"
+			data-row-index="{$rowIndex}"
+			data-oninput="{'handleInput_'}"
+			name="{isNonnull($name) ? ($name + ($rowIndex + 1)) : ''}"
+			placeholder="{$placeholder ?: ''}"
+		/>
+
+		<p class="help-block">{$field and $field.error ? $field.error : ''}</p>
+
+	</div>
+{/template}
+
+/**
+ * @param fields
+ * @param fieldsConfig
+ */
+{template .shouldAddRow kind="text"}
+	{foreach $config in $fieldsConfig}
+		{let $index: index($config) /}
+		{let $hasValue: isNonnull($fields[$index]) and isNonnull($fields[$index].value) and $fields[$index].value != '' /}
+		{if (not $config.disableDuplication) and $hasValue}
+			true
+		{/if}
+	{/foreach}
+{/template}

@@ -1,0 +1,146 @@
+@import "bootstrap-sass/assets/stylesheets/bootstrap/alerts";
+@import "variables";
+
+.alert {
+	border: 0;
+	position: fixed;
+	text-align: center;
+	z-index: 1051;
+	background-color: white;
+	border-radius: 4px;
+	bottom: 50px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+	color: rgba($primary, .8);
+	font-size: 14px;
+	font-weight: 400;
+	left: 50px;
+	margin: 0;
+	height: 60px;
+	padding: 0;
+}
+
+.alert-danger {
+	background-color: $white;
+}
+
+.alert-success {
+	background-color: $white;
+}
+
+.alert-body {
+	display: inline-block;
+	line-height: 60px;
+	min-height: 60px;
+	margin: 0 20px;
+}
+
+.alert .close {
+	@include anim(color);
+	opacity: 1;
+	outline: none;
+	text-shadow: none;
+	color: rgba($primary, .4);
+	font-size: 24px;
+	line-height: 59px;
+	margin: 0 20px 0 0;
+	right: inherit;
+	top: inherit;
+}
+
+.alert .close:hover {
+	color: rgba($primary, .2);
+	opacity: 1;
+}
+
+.alert .spinner {
+	margin: 0 0 0 20px;
+	top: 7px;
+}
+
+.alert-alert-content {
+	margin: 0 0 0 20px;
+}
+
+.alert-undo-link {
+	outline: none;
+	background: rgba($white, 0);
+	border: 0px solid $white;
+	padding: 0;
+	color: $accent;
+	font-size: 14px;
+	font-weight: 700;
+	margin: 0 0 0 20px;
+	text-transform: uppercase;
+	position: relative;
+	top: 1px;
+	transition: color 0.2s;
+}
+
+.alert-undo-link:hover {
+	color: rgba($accent, .8);
+}
+
+@keyframes slideInLeft {
+	0% {
+		transform: translate3d(-100%, 0, 0);
+		visibility: visible;
+	}
+
+	100% {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes slideOutLeft {
+	from {
+		transform: translate3d(0, 0, 0);
+	}
+
+	to {
+		visibility: hidden;
+		transform: translate3d(-100%, 0, 0);
+	}
+}
+
+@keyframes slideInBottom {
+	0% {
+		transform: translate3d(0, 300%, 0);
+		visibility: visible;
+	}
+
+	100% {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes slideOutBottom {
+	from {
+		transform: translate3d(0, 0, 0);
+	}
+
+	to {
+		visibility: hidden;
+		transform: translate3d(0, 300%, 0);
+	}
+}
+
+.slideInBottom {
+	animation-name: slideInBottom;
+}
+
+.slideOutBottom {
+	animation-name: slideOutBottom;
+}
+
+.slideInLeft {
+	animation-name: slideInLeft;
+}
+
+.slideOutLeft {
+	animation-name: slideOutLeft;
+}
+
+.animated {
+	animation-duration: 0.2s;
+	animation-fill-mode: both;
+}

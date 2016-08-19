@@ -1,0 +1,99 @@
+@import "bootstrap-sass/assets/stylesheets/bootstrap/forms";
+
+label {
+	color: rgba($primary, 0.6);
+	font-size: 14px;
+	font-weight: 400;
+	margin-bottom: 0;
+	line-height: 36px;
+}
+
+.form-group {
+	margin-bottom: 0px;
+}
+
+.form-control {
+	@include anim(background);
+	background: rgba($primary, .05);
+	border: 0;
+	box-shadow: none;
+	color: rgba($primary, .8);
+	font-size: 16px;
+	padding: 0 20px;
+
+	&:focus {
+		background: rgba($primary, .1);
+		box-shadow: none;
+	}
+
+	&[disabled],
+	&[readonly] {
+		background: rgba($primary, .2);
+	}
+}
+
+.form-control-borderless {
+	border: 0;
+	color: rgba($primary, .8);
+	font-size: 16px;
+	outline: 0;
+}
+
+.help-block {
+	color: rgba($secondary, .4);
+	font-size: 14px;
+	margin: 0;
+	line-height: 24px;
+	min-height: 36px;
+	padding: 6px 0;
+}
+
+.has-success,
+.has-warning,
+.has-error {
+	.form-control,
+	.form-control:focus {
+		box-shadow: none;
+	}
+}
+
+.has-success {
+	.form-control {
+		background: rgba($brand-success, .1);
+	}
+
+	.help-block .primary {
+		color: $state-success-text;
+	}
+}
+
+.has-warning {
+	.form-control {
+		background: rgba($brand-warning, .1);
+	}
+
+	.help-block .primary {
+		color: $state-warning-text;
+	}
+}
+
+.has-error {
+	.form-control {
+		background: rgba($brand-danger, .1);
+	}
+
+	.help-block .primary {
+		color: $state-danger-text;
+	}
+}
+
+.input-inverse-accent {
+	background: $input-inverse-bg;
+	border-color: $input-inverse-border;
+	color: $input-inverse-color;
+	@include placeholder($input-inverse-color-placeholder);
+
+	&:focus {
+		border-color: $input-inverse-border-focus;
+	}
+}

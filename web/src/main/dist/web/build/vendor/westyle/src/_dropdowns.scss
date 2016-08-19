@@ -1,0 +1,92 @@
+@import "bootstrap-sass/assets/stylesheets/bootstrap/dropdowns";
+@import "variables";
+
+.dropdown-menu {
+	background: $white;
+	border: 0;
+	border-radius: $border-radius-base;
+	box-shadow: 0 2px 8px rgba($primary, .1);
+	margin: -10px 0 0 10px;
+	min-width: initial;
+	position: absolute;
+}
+
+.dropdown-menu li {
+	margin: 0;
+
+	&:first-child {
+		margin-top: 24px;
+	}
+
+	&:last-child {
+		margin-bottom: 24px;
+	}
+}
+
+.dropdown-menu li a,
+.dropdown-menu li button {
+	@include anim(color);
+	color: $dropdown-link-color;
+	display: block;
+	font-size: 14px;
+	padding: 10px 40px;
+	text-decoration: none;
+	width: 100%;
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+		background-color: $dropdown-link-hover-bg;
+		color: $dropdown-link-hover-color;
+	}
+}
+
+/* ==========================================================================
+   Dropdown menu icon
+   ========================================================================== */
+
+.dropdown-icon .dropdown-menu {
+	list-style: none;
+	padding: 12px 0;
+}
+
+.dropdown-icon .dropdown-menu li {
+	&:first-child {
+		margin-top: 0px;
+	}
+
+	&:last-child {
+		margin-bottom: 0px;
+	}
+}
+
+.dropdown-icon .dropdown-menu li a,
+.dropdown-icon .dropdown-menu li button {
+	@include anim(all);
+	color: rgba($primary, .8);
+	font-size: 12px;
+	margin: 0;
+	padding: 0 20px;
+	line-height: 36px;
+
+	span {
+		@include anim(color);
+		color: rgba($primary, .8);
+		display: inline-block;
+		margin-right: 20px;
+		position: relative;
+		text-align: center;
+		top: 1px;
+		width: 14px;
+	}
+
+	&:hover,
+	&:focus {
+		background-color: rgba($accent, .1);
+		color: $accent;
+
+		span {
+			color: $accent;
+		}
+	}
+}

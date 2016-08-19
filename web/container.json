@@ -1,5 +1,8 @@
 {
     "id": "web",
     "name": "Library UI",
-    "type": "wedeploy/hosting:latest"
+    "type": "wedeploy/maven",
+    "hooks": {
+		"build": "./gradlew -Dorg.gradle.native=false clean installDist build -x test"
+	}
 }

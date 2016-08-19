@@ -1,0 +1,39 @@
+{namespace Page}
+
+/**
+ * @param content
+ */
+{template .render}
+	<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="utf-8">
+			<title>Dashboard – WeDeploy™ by Liferay</title>
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="shortcut icon" href="/favicon.ico">
+
+			<!-- Fonts -->
+			<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:700,600,400,300|Roboto+Mono">
+			<link rel="stylesheet" href="/build/vendor/westyle/build/fonts/galano/font-galano.css">
+			<link rel="stylesheet" href="/build/vendor/westyle/build/fonts/icon-12.css">
+			<link rel="stylesheet" href="/build/vendor/westyle/build/fonts/icon-16.css">
+
+			<!-- Styles -->
+			<link rel="stylesheet" href="/build/vendor/senna/senna.css">
+			<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/tomorrow-night-eighties.min.css">
+			<link rel="stylesheet" href="/build/dashboard.css">
+		</head>
+		<body>
+			<div class="senna-loading-bar"></div>
+
+			<div id="content">
+				{$content}
+			</div>
+
+			<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
+			<script src="https://cdn.socket.io/socket.io-1.3.0.js"></script>
+			<script src="http://cdn.wedeploy.com/api/latest/wedeploy.js"></script>
+			<script src="/build/globals/dashboard.js"></script>
+		</body>
+	</html>
+{/template}

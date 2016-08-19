@@ -1,0 +1,34 @@
+apply plugin: 'java-library-distribution'
+
+group 'org.library'
+version '1.0-SNAPSHOT'
+
+buildscript {
+	repositories {
+		mavenLocal()
+		mavenCentral()
+		jcenter()
+	}
+}
+
+apply plugin: 'java'
+
+repositories {
+	jcenter()
+	mavenLocal()
+	mavenCentral()
+	maven () {
+		url "https://jitpack.io"
+	}
+}
+
+dependencies {
+	compile 'com.github.wedeploy.api-java:api:master-SNAPSHOT'
+	compile group: "com.google.template", name: "soy", version: "2015-04-10"
+
+	testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '2.12'
+}

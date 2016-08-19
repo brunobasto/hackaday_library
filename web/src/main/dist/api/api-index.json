@@ -1,0 +1,6 @@
+[
+  {
+    "path": "/",
+    "handler": "org.library.handlers.MainHandler#handle"
+  }
+]

@@ -1,0 +1,55 @@
+{
+  "_args": [
+    [
+      "westyle@github:wedeploy/westyle#v2.0.x",
+      "/Users/brunobasto/Projects/hackaday_library/web"
+    ]
+  ],
+  "_from": "wedeploy/westyle#v2.0.x",
+  "_id": "westyle@2.0.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/westyle",
+  "_phantomChildren": {},
+  "_requested": {
+    "hosted": {
+      "directUrl": "https://raw.githubusercontent.com/wedeploy/westyle/v2.0.x/package.json",
+      "gitUrl": "git://github.com/wedeploy/westyle.git#v2.0.x",
+      "httpsUrl": "git+https://github.com/wedeploy/westyle.git#v2.0.x",
+      "shortcut": "github:wedeploy/westyle#v2.0.x",
+      "ssh": "git@github.com:wedeploy/westyle.git#v2.0.x",
+      "sshUrl": "git+ssh://git@github.com/wedeploy/westyle.git#v2.0.x",
+      "type": "github"
+    },
+    "name": "westyle",
+    "raw": "westyle@github:wedeploy/westyle#v2.0.x",
+    "rawSpec": "github:wedeploy/westyle#v2.0.x",
+    "scope": null,
+    "spec": "github:wedeploy/westyle#v2.0.x",
+    "type": "hosted"
+  },
+  "_requiredBy": [
+    "/",
+    "/metal-toast"
+  ],
+  "_resolved": "git://github.com/wedeploy/westyle.git#257d3785a747d59b76d22c92838bccbbac811232",
+  "_shasum": "db74e5a5dbf43be61ed57be4e2c2d54664267fa5",
+  "_shrinkwrap": null,
+  "_spec": "westyle@github:wedeploy/westyle#v2.0.x",
+  "_where": "/Users/brunobasto/Projects/hackaday_library/web",
+  "dependencies": {
+    "bootstrap-sass": "^3.3.6"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-iconfont": "^2.0.0",
+    "gulp-iconfont-css": "0.0.9",
+    "gulp-sass": "^2.3.1"
+  },
+  "gitHead": "257d3785a747d59b76d22c92838bccbbac811232",
+  "name": "westyle",
+  "optionalDependencies": {},
+  "private": true,
+  "readme": "ERROR: No README data found!",
+  "version": "2.0.0"
+}

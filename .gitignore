@@ -1,0 +1,5 @@
+/build
+/bin
+web/.gradle
+web/build
+web/bin
