@@ -1,0 +1,35 @@
+Usuarios
+	Google
+
+Organizacao
+	Nome
+	Biblioteca
+
+Biblioteca
+	Nome
+	Local
+	Tempo Emprestimo
+
+Livro
+	Capa
+	Nome
+	Descricao
+	Categoria
+	ISBN
+	CDD
+
+Copia
+	Biblioteca
+	Livro
+	Quantidade
+
+Emprestimo
+	Usuario
+	Copia
+	Data Saida
+	Data Devolucao
+
+Reserva
+	Usuario
+	Copia
+
