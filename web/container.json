@@ -1,0 +1,5 @@
+{
+    "id": "web",
+    "name": "Library UI",
+    "type": "wedeploy/hosting:latest"
+}
