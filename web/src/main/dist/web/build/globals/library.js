@@ -12718,8 +12718,22 @@ babelHelpers;
 
 	new Router({
 		container: '#content',
+		component: 'ListLibraries',
+		path: /\/library\/list/,
+		reuseActiveComponent: false
+	}, false);
+
+	new Router({
+		container: '#content',
 		component: 'LoginForm',
 		path: /\/home/,
+		reuseActiveComponent: false
+	}, false);
+
+	new Router({
+		container: '#content',
+		component: 'LibraryForm',
+		path: /\/library/,
 		reuseActiveComponent: false
 	}, false);
 
@@ -12738,25 +12752,6 @@ babelHelpers;
 	}, false);
 
 	Router.router().dispatch();
-}).call(this);
-'use strict';
-
-(function () {
-	var authUrl = 'http://auth.hackadaylibrary.wedeploy.me';
-
-	var auth = WeDeploy.auth(authUrl);
-
-	var googleProvider = new auth.provider.Google();
-	googleProvider.setProviderScope('email');
-	googleProvider.setRedirectUri('/home');
-
-	window.loginWithGoogle = function () {
-		auth.signInWithRedirect(googleProvider);
-	};
-
-	auth.onSignIn(function () {
-		// User logged
-	});
 }).call(this);
 'use strict';
 
@@ -17903,6 +17898,367 @@ babelHelpers;
   var templates;
   goog.loadModule(function (exports) {
 
+    // This file was automatically generated from libraryForm.soy.
+    // Please don't edit this file by hand.
+
+    /**
+     * @fileoverview Templates in namespace LibraryForm.
+     * @public
+     */
+
+    goog.module('LibraryForm.incrementaldom');
+
+    /** @suppress {extraRequire} */
+    var soy = goog.require('soy');
+    /** @suppress {extraRequire} */
+    var soydata = goog.require('soydata');
+    /** @suppress {extraRequire} */
+    goog.require('goog.i18n.bidi');
+    /** @suppress {extraRequire} */
+    goog.require('goog.asserts');
+    var IncrementalDom = goog.require('incrementaldom');
+    var ie_open = IncrementalDom.elementOpen;
+    var ie_close = IncrementalDom.elementClose;
+    var ie_void = IncrementalDom.elementVoid;
+    var ie_open_start = IncrementalDom.elementOpenStart;
+    var ie_open_end = IncrementalDom.elementOpenEnd;
+    var itext = IncrementalDom.text;
+    var iattr = IncrementalDom.attr;
+
+    var $templateAlias1 = Soy.getTemplate('Page.incrementaldom', 'render');
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      ie_open('div', null, null, 'class', 'container');
+      ie_open('form', null, null, 'role', 'form', 'action', '/library/create');
+      ie_open('div', null, null, 'class', 'row');
+      ie_open('div', null, null, 'class', 'col-md-offset-4 col-md-8');
+      ie_open('h3');
+      itext('Bibliotecas');
+      ie_close('h3');
+      ie_open('div', null, null, 'class', 'form-group');
+      ie_open('label', null, null, 'class', 'control-label', 'for', 'organization');
+      itext('Organização');
+      ie_close('label');
+      ie_open('select', null, null, 'name', 'organization', 'class', 'form-control');
+      var optionList9 = opt_data.options;
+      var optionListLen9 = optionList9.length;
+      for (var optionIndex9 = 0; optionIndex9 < optionListLen9; optionIndex9++) {
+        var optionData9 = optionList9[optionIndex9];
+        ie_open('option', null, null, 'value', optionData9.id);
+        itext((goog.asserts.assert(optionData9.name != null), optionData9.name));
+        ie_close('option');
+      }
+      ie_close('select');
+      ie_close('div');
+      ie_open('div', null, null, 'class', 'form-group');
+      ie_open('label', null, null, 'class', 'control-label', 'for', 'name');
+      itext('Nome');
+      ie_close('label');
+      ie_open('input', null, null, 'type', 'text', 'class', 'form-control', 'name', 'name', 'placeholder', 'Nome', 'value', opt_data.name);
+      ie_close('input');
+      ie_close('div');
+      ie_open('div', null, null, 'class', 'form-group');
+      ie_open('label', null, null, 'class', 'control-label', 'for', 'address');
+      itext('Endereço');
+      ie_close('label');
+      ie_open('input', null, null, 'type', 'text', 'class', 'form-control', 'name', 'address', 'placeholder', 'Endereço', 'value', opt_data.address);
+      ie_close('input');
+      ie_close('div');
+      ie_open('div', null, null, 'class', 'form-group');
+      ie_open('label', null, null, 'class', 'control-label', 'for', 'lending');
+      itext('Dias de empréstimo');
+      ie_close('label');
+      ie_open('input', null, null, 'type', 'number', 'class', 'form-control', 'name', 'lending', 'placeholder', 'Dias de empréstimo', 'value', opt_data.lending);
+      ie_close('input');
+      ie_close('div');
+      ie_close('div');
+      ie_close('div');
+      ie_open('br');
+      ie_close('br');
+      ie_open('div', null, null, 'class', 'row text-right');
+      ie_open('div', null, null, 'class', 'col-md-offset-4 col-md-8');
+      ie_open('button', null, null, 'type', 'submit', 'class', 'btn btn-primary');
+      itext('Salvar');
+      ie_close('button');
+      ie_close('div');
+      ie_close('div');
+      ie_close('form');
+      ie_close('div');
+    }
+    exports.render = $render;
+    if (goog.DEBUG) {
+      $render.soyTemplateName = 'LibraryForm.render';
+    }
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $layout(opt_data, opt_ignored, opt_ijData) {
+      var param19 = function param19() {
+        $render(opt_data, null, opt_ijData);
+      };
+      $templateAlias1(soy.$$augmentMap(opt_data, { content: param19 }), null, opt_ijData);
+    }
+    exports.layout = $layout;
+    if (goog.DEBUG) {
+      $layout.soyTemplateName = 'LibraryForm.layout';
+    }
+
+    exports.render.params = ["options", "name", "address", "lending"];
+    exports.render.types = { "options": "any", "name": "any", "address": "any", "lending": "any" };
+    exports.layout.params = ["element"];
+    exports.layout.types = { "element": "any" };
+    templates = exports;
+    return exports;
+  });
+
+  var LibraryForm = function (_Component) {
+    babelHelpers.inherits(LibraryForm, _Component);
+
+    function LibraryForm() {
+      babelHelpers.classCallCheck(this, LibraryForm);
+      return babelHelpers.possibleConstructorReturn(this, _Component.apply(this, arguments));
+    }
+
+    return LibraryForm;
+  }(Component);
+
+  Soy.register(LibraryForm, templates);
+  this.LibraryNamed.libraryForm = this.LibraryNamed.libraryForm || {};
+  this.LibraryNamed.libraryForm.LibraryForm = LibraryForm;
+  this.LibraryNamed.libraryForm.templates = templates;
+  this.Library.libraryForm = templates;
+  /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  var Component = this.Library.component;
+  var Soy = this.Library.Soy;
+  var templates = this.Library.libraryForm;
+
+  var LibraryForm = function (_Component) {
+    babelHelpers.inherits(LibraryForm, _Component);
+
+    function LibraryForm() {
+      babelHelpers.classCallCheck(this, LibraryForm);
+      return babelHelpers.possibleConstructorReturn(this, _Component.apply(this, arguments));
+    }
+
+    return LibraryForm;
+  }(Component);
+
+  Soy.register(LibraryForm, templates);
+
+  this.Library.libraryForm = LibraryForm;
+}).call(this);
+'use strict';
+
+(function () {
+  /* jshint ignore:start */
+  var Component = this.Library.component;
+  var Soy = this.Library.Soy;
+
+  var templates;
+  goog.loadModule(function (exports) {
+
+    // This file was automatically generated from listLibraries.soy.
+    // Please don't edit this file by hand.
+
+    /**
+     * @fileoverview Templates in namespace ListLibraries.
+     * @public
+     */
+
+    goog.module('ListLibraries.incrementaldom');
+
+    /** @suppress {extraRequire} */
+    var soy = goog.require('soy');
+    /** @suppress {extraRequire} */
+    var soydata = goog.require('soydata');
+    /** @suppress {extraRequire} */
+    goog.require('goog.i18n.bidi');
+    /** @suppress {extraRequire} */
+    goog.require('goog.asserts');
+    var IncrementalDom = goog.require('incrementaldom');
+    var ie_open = IncrementalDom.elementOpen;
+    var ie_close = IncrementalDom.elementClose;
+    var ie_void = IncrementalDom.elementVoid;
+    var ie_open_start = IncrementalDom.elementOpenStart;
+    var ie_open_end = IncrementalDom.elementOpenEnd;
+    var itext = IncrementalDom.text;
+    var iattr = IncrementalDom.attr;
+
+    var $templateAlias1 = Soy.getTemplate('Page.incrementaldom', 'render');
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      itext('  ');
+      ie_open('div', null, null, 'class', 'container');
+      ie_open('div', null, null, 'class', 'row');
+      ie_open('div', null, null, 'class', 'list col-md-8 col-md-offset-4');
+      ie_open('ul', null, null, 'class', 'list-group');
+      var libraryList31 = opt_data.libraries;
+      var libraryListLen31 = libraryList31.length;
+      for (var libraryIndex31 = 0; libraryIndex31 < libraryListLen31; libraryIndex31++) {
+        var libraryData31 = libraryList31[libraryIndex31];
+        ie_open('li', null, null, 'class', 'listitem list-group-item clearfix', 'data-index', '0');
+        ie_open('div');
+        ie_open('span', null, null, 'class', 'list-image pull-left avatar-photo');
+        ie_open('img', null, null, 'src', 'https://avatars0.githubusercontent.com/u/5216049?v=3&amp;s=96');
+        ie_close('img');
+        ie_close('span');
+        ie_open('div', null, null, 'class', 'list-main-content pull-left');
+        ie_open('div', null, null, 'class', 'list-text-primary');
+        itext((goog.asserts.assert(libraryData31.name != null), libraryData31.name));
+        ie_close('div');
+        ie_open('div', null, null, 'class', 'list-text-secondary');
+        itext((goog.asserts.assert(libraryData31.address != null), libraryData31.address));
+        ie_close('div');
+        ie_close('div');
+        ie_close('div');
+        ie_close('li');
+      }
+      ie_close('ul');
+      ie_close('div');
+      ie_close('div');
+      ie_open('div', null, null, 'class', 'row text-right');
+      ie_open('button', null, null, 'type', 'button', 'data-onclick', 'addLibrary', 'class', 'btn btn-primary');
+      itext('+');
+      ie_close('button');
+      ie_close('div');
+      ie_close('div');
+    }
+    exports.render = $render;
+    if (goog.DEBUG) {
+      $render.soyTemplateName = 'ListLibraries.render';
+    }
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $layout(opt_data, opt_ignored, opt_ijData) {
+      var param35 = function param35() {
+        $render(opt_data, null, opt_ijData);
+      };
+      $templateAlias1(soy.$$augmentMap(opt_data, { content: param35 }), null, opt_ijData);
+    }
+    exports.layout = $layout;
+    if (goog.DEBUG) {
+      $layout.soyTemplateName = 'ListLibraries.layout';
+    }
+
+    exports.render.params = ["libraries"];
+    exports.render.types = { "libraries": "any" };
+    exports.layout.params = ["element"];
+    exports.layout.types = { "element": "any" };
+    templates = exports;
+    return exports;
+  });
+
+  var ListLibraries = function (_Component) {
+    babelHelpers.inherits(ListLibraries, _Component);
+
+    function ListLibraries() {
+      babelHelpers.classCallCheck(this, ListLibraries);
+      return babelHelpers.possibleConstructorReturn(this, _Component.apply(this, arguments));
+    }
+
+    return ListLibraries;
+  }(Component);
+
+  Soy.register(ListLibraries, templates);
+  this.LibraryNamed.listLibraries = this.LibraryNamed.listLibraries || {};
+  this.LibraryNamed.listLibraries.ListLibraries = ListLibraries;
+  this.LibraryNamed.listLibraries.templates = templates;
+  this.Library.listLibraries = templates;
+  /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+	var Component = this.Library.component;
+	var Soy = this.Library.Soy;
+	var templates = this.Library.listLibraries;
+
+	var ListLibraries = function (_Component) {
+		babelHelpers.inherits(ListLibraries, _Component);
+
+		function ListLibraries() {
+			babelHelpers.classCallCheck(this, ListLibraries);
+			return babelHelpers.possibleConstructorReturn(this, _Component.apply(this, arguments));
+		}
+
+		ListLibraries.prototype.addLibrary = function addLibrary() {
+			location.href = '/library';
+		};
+
+		return ListLibraries;
+	}(Component);
+
+	ListLibraries.STATE = {
+		libraries: {
+			value: []
+		}
+	};
+
+	Soy.register(ListLibraries, templates);
+
+	this.Library.listLibraries = ListLibraries;
+}).call(this);
+'use strict';
+
+(function () {
+	var _arguments = arguments;
+	var authUrl = 'http://auth.hackadaylibrary.wedeploy.me';
+
+	var auth = WeDeploy.auth(authUrl);
+
+	var googleProvider = new auth.provider.Google();
+	googleProvider.setProviderScope('email');
+	googleProvider.setRedirectUri('http://web.hackadaylibrary.wedeploy.me/library/list');
+
+	window.loginWithGoogle = function () {
+		auth.signInWithRedirect(googleProvider);
+	};
+
+	console.log('Test');
+
+	auth.onSignIn(function () {
+		console.log('onSignIn', _arguments);
+	});
+}).call(this);
+'use strict';
+
+(function () {
+  /* jshint ignore:start */
+  var Component = this.Library.component;
+  var Soy = this.Library.Soy;
+
+  var templates;
+  goog.loadModule(function (exports) {
+
     // This file was automatically generated from LoginForm.soy.
     // Please don't edit this file by hand.
 
@@ -17940,16 +18296,20 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      ie_open('div', null, null, 'class', 'loginform');
-      ie_open('div', null, null, 'class', 'form-group social');
-      ie_open('button', null, null, 'class', 'btn btn-social btn-google', 'type', 'button', 'data-onclick', 'loginWithGoogle');
-      ie_open('span', null, null, 'class', 'brand');
-      ie_void('span', null, null, 'class', 'icon icon-google');
-      ie_close('span');
-      ie_open('span', null, null, 'class', 'btn-label');
+      ie_open('div', null, null, 'class', 'container text-center');
+      ie_open('div', null, null, 'class', 'row');
+      ie_open('div', null, null, 'class', 'col-md-12 col-md-offset-2');
+      ie_open('div', null, null, 'class', 'jumbotron');
+      ie_open('h1');
+      itext('WeRead!!');
+      ie_close('h1');
+      ie_open('p');
+      ie_open('button', null, null, 'type', 'button', 'class', 'btn btn-danger', 'data-onclick', 'loginWithGoogle');
       itext('Login with Google');
-      ie_close('span');
       ie_close('button');
+      ie_close('p');
+      ie_close('div');
+      ie_close('div');
       ie_close('div');
       ie_close('div');
     }
@@ -17966,10 +18326,10 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $layout(opt_data, opt_ignored, opt_ijData) {
-      var param5 = function param5() {
+      var param53 = function param53() {
         $render(opt_data, null, opt_ijData);
       };
-      $templateAlias1(soy.$$augmentMap(opt_data, { content: param5 }), null, opt_ijData);
+      $templateAlias1(soy.$$augmentMap(opt_data, { content: param53 }), null, opt_ijData);
     }
     exports.layout = $layout;
     if (goog.DEBUG) {
@@ -18012,9 +18372,15 @@ babelHelpers;
 	var LoginForm = function (_Component) {
 		babelHelpers.inherits(LoginForm, _Component);
 
-		function LoginForm() {
+		function LoginForm(config) {
 			babelHelpers.classCallCheck(this, LoginForm);
-			return babelHelpers.possibleConstructorReturn(this, _Component.apply(this, arguments));
+
+			var _this = babelHelpers.possibleConstructorReturn(this, _Component.call(this, config));
+
+			if (WeDeploy.auth().currentUser) {
+				location.href = '/library/list';
+			}
+			return _this;
 		}
 
 		LoginForm.prototype.loginWithGoogle = function loginWithGoogle() {
@@ -18101,7 +18467,7 @@ babelHelpers;
       opt_data = opt_data || {};
       soy.asserts.assertType(opt_data.nome == null || opt_data.nome instanceof Function || opt_data.nome instanceof soydata.UnsanitizedText || goog.isString(opt_data.nome), 'nome', opt_data.nome, '?soydata.SanitizedHtml|string|undefined');
       var nome = /** @type {?soydata.SanitizedHtml|string|undefined} */opt_data.nome;
-      ie_open('form', null, null, 'action', 'http://data.hackadaylibrary.wedeploy.me/organization', 'method', 'POST');
+      ie_open('form', null, null, 'action', '/organization/create', 'method', 'POST');
       ie_open('div', null, null, 'class', 'container');
       ie_open('div', null, null, 'class', 'row');
       ie_open('div', null, null, 'class', 'col-md-4');
@@ -18135,10 +18501,10 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $layout(opt_data, opt_ignored, opt_ijData) {
-      var param15 = function param15() {
+      var param45 = function param45() {
         $render(opt_data, null, opt_ijData);
       };
-      $templateAlias1(soy.$$augmentMap(opt_data, { content: param15 }), null, opt_ijData);
+      $templateAlias1(soy.$$augmentMap(opt_data, { content: param45 }), null, opt_ijData);
     }
     exports.layout = $layout;
     if (goog.DEBUG) {
@@ -18250,7 +18616,6 @@ babelHelpers;
             ie_void('script', null, null, 'src', '/build/globals/library.js');
             ie_close('head');
             ie_open('body');
-            ie_void('div', null, null, 'class', 'senna-loading-bar');
             ie_open('div', null, null, 'id', 'content');
             itext((goog.asserts.assert(opt_data.content != null), opt_data.content));
             ie_close('div');

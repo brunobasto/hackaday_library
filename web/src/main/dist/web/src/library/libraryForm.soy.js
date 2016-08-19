@@ -45,7 +45,8 @@ function $render(opt_data, opt_ignored, opt_ijData) {
   ie_open('div', null, null,
       'class', 'container');
     ie_open('form', null, null,
-        'role', 'form');
+        'role', 'form',
+        'action', '/library/create');
       ie_open('div', null, null,
           'class', 'row');
         ie_open('div', null, null,
@@ -61,14 +62,15 @@ function $render(opt_data, opt_ignored, opt_ijData) {
               itext('Organiza\u00E7\u00E3o');
             ie_close('label');
             ie_open('select', null, null,
-                'id', 'organization',
+                'name', 'organization',
                 'class', 'form-control');
-              var optionList7 = opt_data.options;
-              var optionListLen7 = optionList7.length;
-              for (var optionIndex7 = 0; optionIndex7 < optionListLen7; optionIndex7++) {
-                var optionData7 = optionList7[optionIndex7];
-                ie_open('option');
-                  itext((goog.asserts.assert((optionData7) != null), optionData7));
+              var optionList9 = opt_data.options;
+              var optionListLen9 = optionList9.length;
+              for (var optionIndex9 = 0; optionIndex9 < optionListLen9; optionIndex9++) {
+                var optionData9 = optionList9[optionIndex9];
+                ie_open('option', null, null,
+                    'value', optionData9.id);
+                  itext((goog.asserts.assert((optionData9.name) != null), optionData9.name));
                 ie_close('option');
               }
             ie_close('select');
@@ -83,7 +85,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
             ie_open('input', null, null,
                 'type', 'text',
                 'class', 'form-control',
-                'id', 'name',
+                'name', 'name',
                 'placeholder', 'Nome',
                 'value', opt_data.name);
             ie_close('input');
@@ -98,7 +100,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
             ie_open('input', null, null,
                 'type', 'text',
                 'class', 'form-control',
-                'id', 'address',
+                'name', 'address',
                 'placeholder', 'Endere\u00E7o',
                 'value', opt_data.address);
             ie_close('input');
@@ -113,13 +115,15 @@ function $render(opt_data, opt_ignored, opt_ijData) {
             ie_open('input', null, null,
                 'type', 'number',
                 'class', 'form-control',
-                'id', 'lending',
+                'name', 'lending',
                 'placeholder', 'Dias de empr\u00E9stimo',
                 'value', opt_data.lending);
             ie_close('input');
           ie_close('div');
         ie_close('div');
       ie_close('div');
+      ie_open('br');
+      ie_close('br');
       ie_open('div', null, null,
           'class', 'row text-right');
         ie_open('div', null, null,
@@ -148,10 +152,10 @@ if (goog.DEBUG) {
  * @suppress {checkTypes}
  */
 function $layout(opt_data, opt_ignored, opt_ijData) {
-  var param17 = function() {
+  var param19 = function() {
     $render(opt_data, null, opt_ijData);
   };
-  $templateAlias1(soy.$$augmentMap(opt_data, {content: param17}), null, opt_ijData);
+  $templateAlias1(soy.$$augmentMap(opt_data, {content: param19}), null, opt_ijData);
 }
 exports.layout = $layout;
 if (goog.DEBUG) {

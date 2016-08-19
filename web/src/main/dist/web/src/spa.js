@@ -4,8 +4,8 @@ import Router from 'metal-router';
 
 new Router({
 	container: '#content',
-	component: 'LibraryForm',
-	path: /\library/,
+	component: 'ListLibraries',
+	path: /\/library\/list/,
 	reuseActiveComponent: false
 }, false);
 
@@ -13,6 +13,14 @@ new Router({
 	container: '#content',
 	component: 'LoginForm',
 	path: /\/home/,
+	reuseActiveComponent: false
+}, false);
+
+
+new Router({
+	container: '#content',
+	component: 'LibraryForm',
+	path: /\/library/,
 	reuseActiveComponent: false
 }, false);
 

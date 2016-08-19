@@ -6,12 +6,14 @@ var auth = WeDeploy.auth(authUrl);
 
 var googleProvider = new auth.provider.Google();
 googleProvider.setProviderScope('email');
-googleProvider.setRedirectUri('/home');
+googleProvider.setRedirectUri('http://web.hackadaylibrary.wedeploy.me/library/list');
 
 window.loginWithGoogle = function() {
 	auth.signInWithRedirect(googleProvider);
 };
 
+console.log('Test');
+
 auth.onSignIn(() => {
-	// User logged
+	console.log('onSignIn', arguments);
 });

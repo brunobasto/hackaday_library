@@ -19,5 +19,13 @@
   {
     "path": "/create",
     "handler": "org.library.handlers.OrganizationHandler#createOrganization"
+  },
+  {
+    "path": "/library/create",
+    "handler": "org.library.handlers.LibraryHandler#createLibrary"
+  },
+  {
+    "path": "/library/list",
+    "handler": "org.library.handlers.LibraryHandler#listLibrary"
   }
 ]

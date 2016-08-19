@@ -1,0 +1,44 @@
+{namespace ListLibraries}
+
+/**
+* Desc
+* @param libraries
+*/
+{template .render}
+   <div class="container">
+	    <div class="row">
+	        <div class="list col-md-8 col-md-offset-4">
+	            <ul class="list-group">
+	                {foreach $library in $libraries}
+	                <li class="listitem list-group-item clearfix" data-index="0">
+	                    <div>
+	                        <span class="list-image pull-left avatar-photo"><img src="https://avatars0.githubusercontent.com/u/5216049?v=3&amp;s=96"></span>
+	                        <div class="list-main-content pull-left">
+	                            <div class="list-text-primary">{$library.name}</div>
+	                            <div class="list-text-secondary">{$library.address}</div>
+	                        </div>
+	                    </div>
+	                </li>                 
+	                {/foreach}
+	            </ul>
+	        </div>
+	    </div>
+	   <div class="row text-right">
+            <button type="button" data-onclick="addLibrary" class="btn btn-primary">+</button>
+	    </div>
+	</div>
+{/template}
+
+/**
+ * Private Layout
+ * @param element
+ */
+{template .layout private="true"}
+	{call Page.render data="all"}
+		{param content kind="html"}
+			{call ListLibraries.render data="all"}
+				{param element: $element /}
+			{/call}
+		{/param}
+	{/call}
+{/template}
