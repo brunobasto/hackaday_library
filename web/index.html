@@ -6,31 +6,37 @@
 </head>
 <body>
 
-
-<button id="login" onclick="login()">login</button>
-
-
+<button onclick="login()"> Login </button>
+<button onclick="logout()"> Logout </button>
 
 <script>
 
-	function login() {
-    	console.log('test')
+	var currentUser = WeDeploy.auth().currentUser;
 
-		var auth = WeDeploy.auth('http://auth.hackadaylibrary.wedeploy.me');
+	if (currentUser) {
+		document.write("Hello " + currentUser.name)
+	}
+
+	function login() {
+    	var auth = WeDeploy.auth('http://auth.hackadaylibrary.wedeploy.me');
 
 		var provider = new auth.provider.Google();
+
 		provider.setProviderScope("profile");
 
 		auth.signInWithRedirect(provider);
 
 		auth.onSignIn(function(user) {
-		    console.log(user)
 		});
+	}
+
+	function logout() {
+		WeDeploy.auth('http://auth.hackadaylibrary.wedeploy.me').signOut().then(function() {
+        	location.reload()
+    	});
 	}
 
 
 </script>
-
-
 </body>
 </html>
