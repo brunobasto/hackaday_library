@@ -2,5 +2,25 @@
 	{
 		"path": "/book/*",
 		"data": true
+	},
+	{
+		"path": "/library/*",
+		"data": true
+	},
+	{
+		"path": "/organization/*",
+		"data": true
+	},
+	{
+		"path": "/copy/*",
+		"data": true
+	},
+	{
+		"path": "/lending/*",
+		"data": true
+	},
+	{
+		"path": "/hold/*",
+		"data": true
 	}
 ]
