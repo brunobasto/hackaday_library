@@ -49,7 +49,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
             'charset', 'utf-8');
         ie_close('meta');
         ie_open('title');
-          itext('Dashboard \u2013 WeDeploy\u2122 by Liferay');
+          itext('Library');
         ie_close('title');
         ie_open('meta', null, null,
             'name', 'viewport',
@@ -91,8 +91,16 @@ function $render(opt_data, opt_ignored, opt_ijData) {
             ie_close('link');
             ie_open('link', null, null,
                 'rel', 'stylesheet',
-                'href', '/build/dashboard.css');
+                'href', '/build/vendor/westyle/build/bootstrap.css');
             ie_close('link');
+            ie_void('script', null, null,
+                'src', '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js');
+            ie_void('script', null, null,
+                'src', 'https://cdn.socket.io/socket.io-1.3.0.js');
+            ie_void('script', null, null,
+                'src', 'http://cdn.wedeploy.com/api/latest/wedeploy.js');
+            ie_void('script', null, null,
+                'src', '/build/globals/library.js');
           ie_close('head');
           ie_open('body');
             ie_void('div', null, null,
@@ -101,29 +109,13 @@ function $render(opt_data, opt_ignored, opt_ijData) {
                 'id', 'content');
               itext((goog.asserts.assert((opt_data.content) != null), opt_data.content));
             ie_close('div');
-            ie_void('script', null, null,
-                'src', '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js');
-            ie_void('script', null, null,
-                'src', 'https://cdn.socket.io/socket.io-1.3.0.js');
-            ie_void('script', null, null,
-                'src', 'http://cdn.wedeploy.com/api/latest/wedeploy.js');
-            ie_void('script', null, null,
-                'src', '/build/globals/dashboard.js');
-            ie_open('!--', null, null,
-                'Analytics', '',
-                '--', '');
-              itext('\n\t\t\t\t');
-              ie_open('script');
-                itext('\n\t\t\t\t(function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function(){\n\t\t\t\t(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\n\t\t\t\tm=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\n\t\t\t\t})(window,document,\'script\',\'//www.google-analytics.com/analytics.js\',\'ga\');\n\n\t\t\t\tga(\'create\', \'UA-37033501-2\', \'auto\');\n\t\t\t\tga(\'send\', \'pageview\');\n\t\t\t\t');
-              ie_close('script');
-              itext('\n\t\t\t');
-            ie_close('body');
-          ie_close('html');
-        }
-        exports.render = $render;
-        if (goog.DEBUG) {
-          $render.soyTemplateName = 'Page.render';
-        }
+          ie_close('body');
+        ie_close('html');
+      }
+      exports.render = $render;
+      if (goog.DEBUG) {
+        $render.soyTemplateName = 'Page.render';
+      }
 
 exports.render.params = ["content"];
 exports.render.types = {"content":"any"};

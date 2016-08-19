@@ -8,7 +8,7 @@
 	<html lang="en">
 		<head>
 			<meta charset="utf-8">
-			<title>Dashboard – WeDeploy™ by Liferay</title>
+			<title>Library</title>
 			<meta name="viewport" content="width=device-width, initial-scale=1">
 			<link rel="shortcut icon" href="/favicon.ico">
 
@@ -21,7 +21,12 @@
 			<!-- Styles -->
 			<link rel="stylesheet" href="/build/vendor/senna/senna.css">
 			<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/tomorrow-night-eighties.min.css">
-			<link rel="stylesheet" href="/build/dashboard.css">
+			<link rel="stylesheet" href="/build/vendor/westyle/build/bootstrap.css">
+
+			<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
+			<script src="https://cdn.socket.io/socket.io-1.3.0.js"></script>
+			<script src="http://cdn.wedeploy.com/api/latest/wedeploy.js"></script>
+			<script src="/build/globals/library.js"></script>
 		</head>
 		<body>
 			<div class="senna-loading-bar"></div>
@@ -29,11 +34,6 @@
 			<div id="content">
 				{$content}
 			</div>
-
-			<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
-			<script src="https://cdn.socket.io/socket.io-1.3.0.js"></script>
-			<script src="http://cdn.wedeploy.com/api/latest/wedeploy.js"></script>
-			<script src="/build/globals/dashboard.js"></script>
 		</body>
 	</html>
 {/template}

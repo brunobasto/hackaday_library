@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "bootstrap-sass": "^3.3.7",
     "express": "^4.14.0",
     "metal": "^v1.0.0",
     "metal-components": "^1.0.0",
@@ -31,7 +32,7 @@
   "name": "hackaday_library",
   "repository": "brunobasto/hackaday_library",
   "scripts": {
-  	"start": "node index.js",
+    "start": "node index.js",
     "test": "gulp test"
   },
   "version": "0.0.0"

@@ -2,5 +2,9 @@
   {
     "path": "/",
     "handler": "org.library.handlers.MainHandler#handle"
+  },
+  {
+    "path": "/home",
+    "handler": "org.library.handlers.MainHandler#handle"
   }
 ]

@@ -3,3 +3,4 @@
 web/.gradle
 web/build
 web/bin
+node_modules

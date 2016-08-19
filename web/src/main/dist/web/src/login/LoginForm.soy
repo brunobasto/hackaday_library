@@ -4,12 +4,6 @@
  * Login
  */
 {template .render}
-	{@param? textFooter: html}
-	{@param? textPrimary: html}
-
-	{if $textPrimary}
-		<h1 class="login-text-primary">{$textPrimary}</h1>
-	{/if}
 	<div class="loginform">
 		<div class="form-group social">
 			<button class="btn btn-social btn-google" type="button" data-onclick="loginWithGoogle">
@@ -20,7 +14,18 @@
 			</button>
 		</div>
 	</div>
-	{if $textFooter}
-		<p class="login-text-footer">{$textFooter}</p>
-	{/if}
+{/template}
+
+/**
+ * Private Layout
+ * @param element
+ */
+{template .layout private="true"}
+	{call Page.render data="all"}
+		{param content kind="html"}
+			{call LoginForm.render data="all"}
+				{param element: $element /}
+			{/call}
+		{/param}
+	{/call}
 {/template}

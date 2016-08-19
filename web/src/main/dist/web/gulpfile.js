@@ -14,13 +14,13 @@ metal.registerTasks({
 	mainBuildJsTasks: ['build:globals:js'],
 	moduleName: 'library',
 	scssIncludePaths: ['../../../../node_modules'],
-	soyDeps: 'node_modules/metal*/src/**/*.soy'
+	soyDeps: '../../../../node_modules/metal*/src/**/*.soy'
 });
 
 gulp.task('copy:deps', function() {
 	var copyNodeModules = function(from, to) {
 		return gulp
-		.src(path.join('node_modules/', from))
+		.src(path.join('../../../../node_modules', from))
 		.pipe(gulp.dest(to));
 	};
 

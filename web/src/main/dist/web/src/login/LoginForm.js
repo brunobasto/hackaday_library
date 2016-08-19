@@ -6,10 +6,6 @@ import templates from './LoginForm.soy';
 
 class LoginForm extends Component {
 
-	loginWithGithub() {
-		window.loginWithGithub();
-	}
-
 	loginWithGoogle() {
 		window.loginWithGoogle();
 	}

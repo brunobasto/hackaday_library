@@ -2,7 +2,7 @@
   "_args": [
     [
       "westyle@github:wedeploy/westyle#v2.0.x",
-      "/Users/brunobasto/Projects/hackaday_library/web"
+      "/Users/brunobasto/Projects/hackaday_library"
     ]
   ],
   "_from": "wedeploy/westyle#v2.0.x",
@@ -33,10 +33,10 @@
     "/metal-toast"
   ],
   "_resolved": "git://github.com/wedeploy/westyle.git#257d3785a747d59b76d22c92838bccbbac811232",
-  "_shasum": "db74e5a5dbf43be61ed57be4e2c2d54664267fa5",
+  "_shasum": "71121054b9f17e78f8f234752bdfe6933ad367f7",
   "_shrinkwrap": null,
   "_spec": "westyle@github:wedeploy/westyle#v2.0.x",
-  "_where": "/Users/brunobasto/Projects/hackaday_library/web",
+  "_where": "/Users/brunobasto/Projects/hackaday_library",
   "dependencies": {
     "bootstrap-sass": "^3.3.6"
   },
