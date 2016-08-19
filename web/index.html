@@ -2,8 +2,35 @@
 <html>
 <head>
 	<title>Test</title>
+	<script src="http://cdn.wedeploy.com/api/latest/wedeploy.js"></script>
 </head>
 <body>
+
+
+<button id="login" onclick="login()">login</button>
+
+
+
+<script>
+
+	function login() {
+    	console.log('test')
+
+		var auth = WeDeploy.auth('http://auth.hackadaylibrary.wedeploy.me');
+
+		var provider = new auth.provider.Google();
+		provider.setProviderScope("profile");
+
+		auth.signInWithRedirect(provider);
+
+		auth.onSignIn(function(user) {
+		    console.log(user)
+		});
+	}
+
+
+</script>
+
 
 </body>
 </html>
