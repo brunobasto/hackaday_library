@@ -16,4 +16,4 @@ form.addEventListener('submit', function(e) {
 		.catch(function(error) {
 			console.error(error);
 		});
-});
+}); 

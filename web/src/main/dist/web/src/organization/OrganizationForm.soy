@@ -6,14 +6,14 @@
 {template .render}
 	{@param? nome: html}
 	
-<form>
+<form action="/organization/create" method="POST">
     <div class="container">
         <div class="row">
 
             <div class="col-md-4">
                 <div class="form-group"> 
                 	<label class="control-label" for="nome">Nome</label>
-                	<input type="text" class="form-control" id="nome" placeholder="Nome" value={$nome}>
+                	<input type="text" class="form-control" id="nome" placeholder="Nome" value="{$nome}" />
                 </div>                 
             </div>
 
@@ -25,4 +25,18 @@
 
     </div>
 </form>
+{/template}
+
+/**
+ * Private Layout
+ * @param element
+ */
+{template .layout private="true"}
+	{call Page.render data="all"}
+		{param content kind="html"}
+			{call OrganizationForm.render data="all"}
+				{param element: $element /}
+			{/call}
+		{/param}
+	{/call}
 {/template}

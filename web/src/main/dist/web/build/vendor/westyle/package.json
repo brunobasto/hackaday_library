@@ -1,0 +1,73 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "westyle@github:wedeploy/westyle#v2.0.x",
+        "scope": null,
+        "escapedName": "westyle",
+        "name": "westyle",
+        "rawSpec": "github:wedeploy/westyle#v2.0.x",
+        "spec": "github:wedeploy/westyle#v2.0.x",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:wedeploy/westyle.git#v2.0.x",
+          "sshUrl": "git+ssh://git@github.com/wedeploy/westyle.git#v2.0.x",
+          "httpsUrl": "git+https://github.com/wedeploy/westyle.git#v2.0.x",
+          "gitUrl": "git://github.com/wedeploy/westyle.git#v2.0.x",
+          "shortcut": "github:wedeploy/westyle#v2.0.x",
+          "directUrl": "https://raw.githubusercontent.com/wedeploy/westyle/v2.0.x/package.json"
+        }
+      },
+      "/Users/andersonperrelli/Liferay/LiferayHackDay/hackaday_library/web"
+    ]
+  ],
+  "_from": "wedeploy/westyle#v2.0.x",
+  "_id": "westyle@2.0.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/westyle",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "westyle@github:wedeploy/westyle#v2.0.x",
+    "scope": null,
+    "escapedName": "westyle",
+    "name": "westyle",
+    "rawSpec": "github:wedeploy/westyle#v2.0.x",
+    "spec": "github:wedeploy/westyle#v2.0.x",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:wedeploy/westyle.git#v2.0.x",
+      "sshUrl": "git+ssh://git@github.com/wedeploy/westyle.git#v2.0.x",
+      "httpsUrl": "git+https://github.com/wedeploy/westyle.git#v2.0.x",
+      "gitUrl": "git://github.com/wedeploy/westyle.git#v2.0.x",
+      "shortcut": "github:wedeploy/westyle#v2.0.x",
+      "directUrl": "https://raw.githubusercontent.com/wedeploy/westyle/v2.0.x/package.json"
+    }
+  },
+  "_requiredBy": [
+    "/",
+    "/metal-toast"
+  ],
+  "_resolved": "git://github.com/wedeploy/westyle.git#257d3785a747d59b76d22c92838bccbbac811232",
+  "_shasum": "1cc1d32b2db82b5e2045f289ac544bf4f846d832",
+  "_shrinkwrap": null,
+  "_spec": "westyle@github:wedeploy/westyle#v2.0.x",
+  "_where": "/Users/andersonperrelli/Liferay/LiferayHackDay/hackaday_library/web",
+  "dependencies": {
+    "bootstrap-sass": "^3.3.6"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-iconfont": "^2.0.0",
+    "gulp-iconfont-css": "0.0.9",
+    "gulp-sass": "^2.3.1"
+  },
+  "gitHead": "257d3785a747d59b76d22c92838bccbbac811232",
+  "name": "westyle",
+  "optionalDependencies": {},
+  "private": true,
+  "readme": "ERROR: No README data found!",
+  "version": "2.0.0"
+}

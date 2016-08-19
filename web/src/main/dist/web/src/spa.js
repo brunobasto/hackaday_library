@@ -23,4 +23,11 @@ new Router({
 	reuseActiveComponent: false
 }, false);
 
+new Router({
+	container: '#content',
+	component: 'OrganizationForm',
+	path: /\/organization/,
+	reuseActiveComponent: false
+}, false);
+
 Router.router().dispatch();
