@@ -1,0 +1,6 @@
+[
+	{
+		"path": "/book/*",
+		"data": true
+	}
+]
