@@ -3,12 +3,12 @@ Usuarios
 
 Organizacao
 	Nome
-	Biblioteca
 
 Biblioteca
 	Nome
 	Local
 	Tempo Emprestimo
+	Organizacao
 
 Livro
 	Capa
