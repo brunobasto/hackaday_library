@@ -103,8 +103,6 @@ function $render(opt_data, opt_ignored, opt_ijData) {
                 'src', '/build/globals/library.js');
           ie_close('head');
           ie_open('body');
-            ie_void('div', null, null,
-                'class', 'senna-loading-bar');
             ie_open('div', null, null,
                 'id', 'content');
               itext((goog.asserts.assert((opt_data.content) != null), opt_data.content));

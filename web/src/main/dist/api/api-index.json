@@ -6,5 +6,9 @@
   {
     "path": "/home",
     "handler": "org.library.handlers.MainHandler#handle"
+  },
+  {
+    "path": "/library",
+    "handler": "org.library.handlers.LibraryHandler#handle"
   }
 ]

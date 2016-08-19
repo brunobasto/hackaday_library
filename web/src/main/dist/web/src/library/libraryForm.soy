@@ -1,0 +1,62 @@
+{namespace LibraryForm}
+
+/**
+ *  Library
+ *	@param options
+ *	@param name
+ *	@param address
+ *	@param lending
+ */
+{template .render}
+
+
+	<div class="container">
+	    <form role="form">
+	        <div class="row">
+	            <div class="col-md-offset-4 col-md-8">
+	                <h3>Bibliotecas</h3>
+	                <div class="form-group"> 
+	                    <label class="control-label" for="organization">Organização</label>                     
+
+	                    <select id="organization" class="form-control">
+		                    {foreach $option in $options}
+		                     	<option>{$option}</option>    
+		                    {/foreach}
+	                    </select>
+	                </div>
+	                <div class="form-group"> 
+	                    <label class="control-label" for="name">Nome</label>
+	                    <input type="text" class="form-control" id="name" placeholder="Nome" value="{$name}">
+	                </div>
+	                <div class="form-group"> 
+	                    <label class="control-label" for="address">Endereço</label>
+	                    <input type="text" class="form-control" id="address" placeholder="Endereço" value="{$address}">
+	                </div>
+	                <div class="form-group"> 
+	                    <label class="control-label" for="lending">Dias de empréstimo</label>
+	                    <input type="number" class="form-control" id="lending" placeholder="Dias de empréstimo" value="{$lending}">
+	                </div>                                  
+	            </div>
+	        </div>
+	        <div class="row text-right">
+	            <div class="col-md-offset-4 col-md-8">
+	                <button type="submit" class="btn btn-primary">Salvar</button>                                  
+	            </div>
+	        </div>                                                      
+	    </form>
+	</div>
+{/template}
+
+/**
+ * Private Layout
+ * @param element
+ */
+{template .layout private="true"}
+	{call Page.render data="all"}
+		{param content kind="html"}
+			{call LibraryForm.render data="all"}
+				{param element: $element /}
+			{/call}
+		{/param}
+	{/call}
+{/template}
