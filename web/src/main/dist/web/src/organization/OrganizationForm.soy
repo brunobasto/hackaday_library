@@ -1,0 +1,28 @@
+{namespace OrganizationForm}
+
+/**
+ * Organization
+ */
+{template .render}
+	{@param? nome: html}
+	
+<form>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="form-group"> 
+                	<label class="control-label" for="nome">Nome</label>
+                	<input type="text" class="form-control" id="nome" placeholder="Nome" value={$nome}>
+                </div>                 
+            </div>
+
+        </div>
+
+        <div class="row text-right">
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+
+    </div>
+</form>
+{/template}
