@@ -4,3 +4,4 @@ web/.gradle
 web/build
 web/bin
 node_modules
+web/src/main/dist/web/build
