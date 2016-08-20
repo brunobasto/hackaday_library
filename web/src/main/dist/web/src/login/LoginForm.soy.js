@@ -43,23 +43,26 @@ var $templateAlias1 = Soy.getTemplate('Page.incrementaldom', 'render');
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
   ie_open('div', null, null,
-      'class', 'loginform');
+      'class', 'container text-center');
     ie_open('div', null, null,
-        'class', 'form-group social');
-      ie_open('button', null, null,
-          'class', 'btn btn-social btn-google',
-          'type', 'button',
-          'data-onclick', 'loginWithGoogle');
-        ie_open('span', null, null,
-            'class', 'brand');
-          ie_void('span', null, null,
-              'class', 'icon icon-google');
-        ie_close('span');
-        ie_open('span', null, null,
-            'class', 'btn-label');
-          itext('Login with Google');
-        ie_close('span');
-      ie_close('button');
+        'class', 'row');
+      ie_open('div', null, null,
+          'class', 'col-md-12 col-md-offset-2');
+        ie_open('div', null, null,
+            'class', 'jumbotron');
+          ie_open('h1');
+            itext('WeRead!!');
+          ie_close('h1');
+          ie_open('p');
+            ie_open('button', null, null,
+                'type', 'button',
+                'class', 'btn btn-danger',
+                'data-onclick', 'loginWithGoogle');
+              itext('Login with Google');
+            ie_close('button');
+          ie_close('p');
+        ie_close('div');
+      ie_close('div');
     ie_close('div');
   ie_close('div');
 }
@@ -77,10 +80,10 @@ if (goog.DEBUG) {
  * @suppress {checkTypes}
  */
 function $layout(opt_data, opt_ignored, opt_ijData) {
-  var param30 = function() {
+  var param43 = function() {
     $render(opt_data, null, opt_ijData);
   };
-  $templateAlias1(soy.$$augmentMap(opt_data, {content: param30}), null, opt_ijData);
+  $templateAlias1(soy.$$augmentMap(opt_data, {content: param43}), null, opt_ijData);
 }
 exports.layout = $layout;
 if (goog.DEBUG) {

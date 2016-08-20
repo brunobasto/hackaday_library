@@ -9,35 +9,35 @@
  */
 {template .render}
 
-
 	<div class="container">
-	    <form role="form">
+	    <form role="form" action="/library/create">
 	        <div class="row">
 	            <div class="col-md-offset-4 col-md-8">
 	                <h3>Bibliotecas</h3>
 	                <div class="form-group"> 
 	                    <label class="control-label" for="organization">Organização</label>                     
 
-	                    <select id="organization" class="form-control">
+	                    <select name="organization" class="form-control">
 		                    {foreach $option in $options}
-		                     	<option>{$option}</option>    
+		                     	<option value="{$option.id}">{$option.name}</option>    
 		                    {/foreach}
 	                    </select>
 	                </div>
 	                <div class="form-group"> 
 	                    <label class="control-label" for="name">Nome</label>
-	                    <input type="text" class="form-control" id="name" placeholder="Nome" value="{$name}">
+	                    <input type="text" class="form-control" name="name" placeholder="Nome" value="{$name}">
 	                </div>
 	                <div class="form-group"> 
 	                    <label class="control-label" for="address">Endereço</label>
-	                    <input type="text" class="form-control" id="address" placeholder="Endereço" value="{$address}">
+	                    <input type="text" class="form-control" name="address" placeholder="Endereço" value="{$address}">
 	                </div>
 	                <div class="form-group"> 
 	                    <label class="control-label" for="lending">Dias de empréstimo</label>
-	                    <input type="number" class="form-control" id="lending" placeholder="Dias de empréstimo" value="{$lending}">
+	                    <input type="number" class="form-control" name="lending" placeholder="Dias de empréstimo" value="{$lending}">
 	                </div>                                  
 	            </div>
 	        </div>
+	        <br />
 	        <div class="row text-right">
 	            <div class="col-md-offset-4 col-md-8">
 	                <button type="submit" class="btn btn-primary">Salvar</button>                                  

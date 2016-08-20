@@ -50,7 +50,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
   soy.asserts.assertType(opt_data.nome == null || (opt_data.nome instanceof Function) || (opt_data.nome instanceof soydata.UnsanitizedText) || goog.isString(opt_data.nome), 'nome', opt_data.nome, '?soydata.SanitizedHtml|string|undefined');
   var nome = /** @type {?soydata.SanitizedHtml|string|undefined} */ (opt_data.nome);
   ie_open('form', null, null,
-      'action', 'http://data.hackadaylibrary.wedeploy.me/organization',
+      'action', '/organization/create',
       'method', 'POST');
     ie_open('div', null, null,
         'class', 'container');
@@ -100,10 +100,10 @@ if (goog.DEBUG) {
  * @suppress {checkTypes}
  */
 function $layout(opt_data, opt_ignored, opt_ijData) {
-  var param15 = function() {
+  var param53 = function() {
     $render(opt_data, null, opt_ijData);
   };
-  $templateAlias1(soy.$$augmentMap(opt_data, {content: param15}), null, opt_ijData);
+  $templateAlias1(soy.$$augmentMap(opt_data, {content: param53}), null, opt_ijData);
 }
 exports.layout = $layout;
 if (goog.DEBUG) {
